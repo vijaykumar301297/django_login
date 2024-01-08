@@ -84,7 +84,14 @@ DATABASES = {
         'PORT': '5432',
     }
 }
-
+# Password type changes from sha to argon
+PASSWORD_HASHERS = [
+    "django.contrib.auth.hashers.Argon2PasswordHasher",
+    "django.contrib.auth.hashers.PBKDF2PasswordHasher",
+    "django.contrib.auth.hashers.PBKDF2SHA1PasswordHasher",
+    "django.contrib.auth.hashers.BCryptSHA256PasswordHasher",
+    "django.contrib.auth.hashers.ScryptPasswordHasher",
+]
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
@@ -132,5 +139,5 @@ EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_USE_TLS = True
 EMAIL_PORT = 587
-EMAIL_HOST_USER = 'vkt973012@gmail.com'
-EMAIL_HOST_PASSWORD = 'guwxfjyzsgpoousl'
+EMAIL_HOST_USER = 'example@gmail.com'
+EMAIL_HOST_PASSWORD = 'APP_password'
