@@ -1,0 +1,46 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <link rel="stylesheet"  href="{% static 'css/style.css' %}">
+</head>
+<body>
+
+
+    <div class="container">
+        <div class="content">
+            <form action="" method="post">
+                {% csrf_token %}
+                <div class="form_content">
+                    <h2>Login with your credentials</h2>
+                       {% if messages %}
+                            <ul class="messages">
+                                {% for message in messages %}
+                                <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+                                {% endfor %}
+                            </ul>
+                            {% endif %}
+                    <div class="input">
+                        <label for="" class="input_name">Username</label>
+                        <input type="text" class="username" name="username" placeholder="Enter username" required>
+                    </div>
+                    <div class="input">
+                        <label for="" class="input_name">Password</label>
+                        <input type="password" class="username" name="password" placeholder="Enter password" required>
+                    </div>
+                    <div class="btn">
+                        <button type="submit">Login &rarr;</button>
+                    </div>
+                    <div class="login">
+                        <span>Don't have account ?<a href="{% url 'signup' %}" class="signup"> Signup &rarr;</a> </span>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+</body>
+</html>
