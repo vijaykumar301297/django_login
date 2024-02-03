@@ -1,2 +1,2 @@
 # django_login
-Simple Login page using Django, HTML, CSS and psotgresql to store data. 
+Simple Login page developed by Django, HTML, CSS and user data will be a stored in psotgresql. 
